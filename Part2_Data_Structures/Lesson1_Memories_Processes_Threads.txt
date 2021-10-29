@@ -1,0 +1,140 @@
+Topics
+• Memory Management in Python https://realpython.com/python-memory-management/ 
+• What is the Python Global Interpreter Lock (GIL) https://realpython.com/python-gil/
+• Pointer in Python https://realpython.com/pointers-in-python/
+• Recommend book - Hands-on Data Structure and Algorithms with Python by Dr Basant Agarwai and Benjamin Baka
+
+Quiz:
+1. Memory Management in Python: 
+1.a What is memory management? 
+1.b Why we need memory management in computer? 
+1.c Which part carries out requests to read and write memory? (Operating System, Python Compiled Program, Python Application)
+1.d In CPython, PyObject contain which two things? (ob_refcnt, ob_type)
+1.e What is GIL
+1.f What is Garbage Collection
+1.g Which access virtual memory? Which managements virtual memory? 
+1.h What is size of Arena? 
+1.i What is size of Pool? 
+1.j What is relationship between Arena, Pool and Block? 
+1.k what are three states of pool?  (used, full or empty)
+1.l What are three states of block? (Untouche, free or allocated)
+1.m How the data structures and algorithms work together in CPython’s memory management to handle your data
+
+2. Global Interpreter lock (GIL)
+2.a What is global interpreter lock and how it works in Python (CPython)?
+2.b What is pros and cons using GIL in python?
+2.c Mutli-thread vs Multiprocess, what are differences? 
+2.d What is the count? 
+2.3 Observ the behavior of the following scripts and explain why? 
+import sys
+a = []
+b = a
+sys.getrefcount(a)
+sys.getrefcount(b)
+
+list1 = [1,2,3]
+list2 = list1
+list2[1] = 4
+print(list1)
+print(list2)
+
+var1 = 2
+var2 = var1
+var2 = 3
+print(var1)
+print(var2)
+
+3. Pointer in Python
+
+Mutable vs Immutable
+
+if a ==b:
+
+if a is b:
+
+if type(a) is type(b):
+
+a) Which data types are mutable? List, complex, dict
+b) any object in python class has type, value and identity
+C) Write true of false for the following result(try to use id() to check memory location)
+
+var1 = 1
+var2 = var1
+print(var1 == var2)
+print(var1 is var2)
+print(type(var1) is type(var2))
+
+var1 = 1
+var2 = 1
+print(var1 == var2)
+print(var1 is var2)
+print(type(var1) is type(var2))
+
+var1 = 1
+var2 = 0
+var2 = var2+1
+print(var1 == var2)
+print(var1 is var2)
+print(type(var1) is type(var2))
+
+list1 = [1,2,3]
+list2 = list1
+print(list1 == list2)
+print(list1 is list2)
+print(type(list1) is type(list2))
+
+list1 = [1,2,3]
+list2 = [1,2,3]
+print(list1 == list2)
+print(list1 is list2)
+print(type(list1) is type(list2))
+
+ist1 = [1,2,3]
+list2 = [3,1,2]
+print(list1 == list2)
+print(list1 is list2)
+print(type(list1) is type(list2))
+
+str1 = "Hello"
+str2 = str1
+print(str1 == str2)
+print(str1 is str2)
+print(type(str1) is type(str2))
+
+str3 = "Hello"
+str4 = "Hello"
+print(str3 == str4)
+print(str3 is str4)
+print(type(str3) is type(str4))
+
+str5 = "Hello"
+str6 = "hello"
+print(str5 == str6)
+print(str5 is str6)
+print(type(str6) is type(str6))
+
+dict1 = {"name":"Charlie","age":40}
+dict2 = {"name":"Charlie","age":40}
+print(dict1 == dict2)
+print(dict1 is dict2)
+print(type(dict1) is type(dict2))
+
+dict1 = {"name":"Charlie","age":40}
+dict2 = {"age":40,"name":"Charlie"}
+print(dict1 == dict2)
+print(dict1 is dict2)
+print(type(dict1) is type(dict2))
+
+*******
+var1 = 1
+id(var1)
+var2 = 0
+id(var2)
+var2 = var2+1
+id(var2)
+print(var1 == var2)
+print(var1 is var2)
+print(type(var1) is type(var2))
+
+**** Homework **** 
+Read Strings/Lists

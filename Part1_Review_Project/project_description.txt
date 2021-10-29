@@ -1,0 +1,15 @@
+** Project **
+
+You can choose any of the following projects to finish: 
+
+1) Battleship
+2) Connect4
+3) Reversegam
+4) TIC TAC TOE
+
+** Techincal Requirement **
+
+1) Must have a flowchart before execution
+2) Must show strong understanding of top down design and layout code properly with top down design
+3) Show evidence of understanding classes and objects
+4) Show strong evidence of basic pythons skills including variables, functions, lists and others
