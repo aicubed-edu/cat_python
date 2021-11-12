@@ -1,0 +1,250 @@
+* Variable Scope *
+
+Whenever a function executes, a local environment (namespace) is created. This local namespace contains all the variables and parameter names that are assigned by functions.
+
+The system will look for variable in following order:
+1. Local
+2. Global
+3. Buildin
+
+** Example 1 ** 
+a = 15
+b = 25
+def example_func():
+	global a
+	a = 11
+	b = 21
+
+example_func()
+print(a) #prints 11
+print(b) #prints 25
+
+** Exapmle 2 **
+a = 10
+def example_func():
+	print(a)
+exmaple_func() #prints 10
+
+** Example 3 **
+a = 10
+def example_func():
+	print(a)
+	a = a + 1
+example_funca() #print UnboundLocalError
+
+
+** Example 4 **
+a = 10
+def example_func():
+	global a
+	print(a)
+	a = a + 1
+example_func() #prints 10
+print(a) #prints 11
+
+
+** Quiz ** 
+
+Write down prints for the following quiz
+
+*** Quiz 1 ***
+a = 2
+def quiz_func():
+	a = a^2
+print(a)
+
+*** Quiz 2 ***
+a = 2
+def quiz_func(a):
+	a = a^2
+quiz_func(a)
+print(a)
+
+*** Quiz 3 ***
+a = 2
+def quiz_func(a):
+	a = a ^ 2
+print(quiz_func(a))
+
+*** Quiz 4 ***
+a = 2
+def quiz_func():
+	global a
+	a = a ^ 2
+print(a)
+
+*** Quiz 5 ***
+a = 2
+def quiz_func():
+	global a
+	a = a ^ 2
+print(quiz_func())
+print(a)
+
+*** Quiz 6 ***
+
+a = 2
+def quiz_func(a):
+	a = a ^ 2
+	return a
+
+print(quiz_func(a))
+
+
+* Overview of Data Types and Objects *
+
+Build in data types:
+1. Numeric Types: int, float, complex, bool
+2. Sequence Types: Str, List, tuple, Range
+3. Mappig Type: Dict
+4. Set Types
+
+Different from C, everything is object in Python. Each data in python has 
+* A Type - Class
+* a value
+* an identity - Reference to memory
+
+** Mutable Objects **
+
+There are three internal data types: 
+* List
+* Dictionary
+* Complex
+
+And user defined classes
+
+** Immutable Objects **
+
+All other ones immutable including;
+* Int
+* Float
+* Decimal
+* Bool
+* String
+* Tuple
+* Range
+
+** Example 1 **
+
+str1 = "python is AWsome"
+str1.capitalize()
+print(str1) #python is AWesome
+
+** Example 2 **
+
+str1 = "python is AWsome"
+str2 = str1.capitalize()
+print(str2) #Python is awesome
+
+** Example 3 **
+
+str1 = "Python is awesome"
+
+str2 = str1.center(24)
+
+print(str1) #Python is awesome
+print(str2) #     Python is awesome
+
+** Example 4 **
+
+str1 = "Python is awesome"
+
+str2 = str1.center(24, '*')
+
+print(str2) #***Python is awesome***
+
+
+** Example 5 **
+
+str1 = "der Fluß"
+str2 = "der Fluss"
+
+# ß is equivalent to ss
+str1.casefold()
+str2.casefold()
+if str1 == str2:
+    print('The strings are equal.')
+else:
+    print('The strings are not equal.')
+
+
+** Example 6 **
+
+str1 = "der Fluß"
+str2 = "der Fluss"
+
+# ß is equivalent to ss
+if str1.casefold() == str2.casefold():
+    print('The strings are equal.')
+else:
+    print('The strings are not equal.')
+
+** Example 7 **
+list_values = [1, 2, 3]
+set_values = (10, 20, 30)
+list_values[0] = 100
+print(list_values) #[100, 2, 3]
+set_values[0] = 100 #Type Error: 'tuple' object does not support item assignment
+
+** Example 8 **
+list_values = [1, 2, 3]
+set_values = (1, 2, 3)
+print(id(list_values))
+print(id(set_values))
+print()
+
+list_values += [4, 5, 6]
+set_values += (4, 5, 6)
+print(id(list_values))
+print(id(set_values))
+
+#2450343168136
+#2450343205552
+#
+#2450343168136
+#2450341742248
+
+
+** Quiz **
+
+*** Quiz 1 ***
+
+txt = "For only {price:.2f} dollars!"
+txt.format(price = 49)
+print(txt)
+
+*** Quiz 2 ***
+
+txt1 = "We have {:<8} chickens."
+txt2 = txt1.format(49)
+print(txt1)
+print(txt2)
+
+*** Quiz 3 ***
+
+txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+txt2 = "My name is {0}, I'm {1}".format("John",36)
+txt3 = "My name is {}, I'm {}".format("John",36)
+print(txt1)
+print(txt2)
+print(txt3)
+
+*** Quiz 4 ***
+
+
+** Challenge ** 
+Rubik Solver
+
+Front, Back, left, Right, Top, Bottom
+The data store in set/tulip like following
+("bgrbgrbgr", ...)
+
+Your program will write step by step guidance how to solve rubik cube including
+1) What the player needs to do
+2) what will be shape looks like after action
+
+First - Understand how other people solve that
+Second - Write down steps how you gona to solve that. 
+
+
+
